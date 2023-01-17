@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+</head>
+<!--<body style="background-image:url('{% static 'images/abcd.jpg' %}');background-repeat:no-repeat;background-size:100% 100%">-->
+<body style="margin:0px; height:700px">
+<!--<form action="/index/" method=""><div style="position:relative;left:95%;">   <tr><td></td><td><input type="submit" value="Home"></td></tr></div></form>-->
+
+
+    <div style="background-image:url('{% static 'images/abcd.jpg' %}'); height:800px; background-repeat: no-repeat:
+    background-attachment: fixed;
+    background-size: 100% 100%;text-align:center;padding-top:200px; ">
+
+
+        <h1 style="color:#082470">Login</h1><br>
+        <h3>Registered User Login</h3><br>
+    {% if msg %}
+    <font color="red"> {{msg}}</font>
+    {% endif %}
+    <form action="/login/" method="post">
+        {% csrf_token %}
+        login as &nbsp
+        <select name="utype" required>
+            <option>User</option>
+        </select>
+        <br>username: <input type="text" name="uname1" required><br><br>
+        password: <input type="password" name="pwd" required><br>
+        <input type="submit" value="login">
+
+    </form>
+        <h4>New Registration?</h4>
+        <a href="/registration/">Sign Up</a>
+    </div>
+
+</body>
+
+</html>
